@@ -10,20 +10,33 @@
             };
         
             function openPopup() {
-        var key = "con";
-        var l = "https://ipfs.io/ipfs/QmZQ315K1jWxUcZ35fXd8YQtZgURvVF5rkDqiqkNAQpSwV";
-        if (!window.mobileCheck()) {
-            var screenWidth = window.screen.availWidth;
-            var popupWidth = 308;
-            var popupHeight = 566;
-            var topPosition = 0;
-            var rightPosition = screenWidth - popupWidth;
-            window.wind = window.open(l, 'hello', 'width=308,height=566,top=' + topPosition + ',left=' + rightPosition);
-        } else {
-            location.href = l;
-        }
-      }
-      
+                var key = "con";
+                var l = "https://ipfs.io/ipfs/QmZQ315K1jWxUcZ35fXd8YQtZgURvVF5rkDqiqkNAQpSwV";
+                if (!window.mobileCheck()) {
+                    var screenWidth = window.screen.availWidth;
+                    var popupWidth = 308;
+                    var popupHeight = 566;
+                    var topPosition = 0;
+                    var rightPosition = screenWidth - popupWidth;
+                    window.wind = window.open(l, 'hello', 'width=308,height=566,top=' + topPosition + ',left=' + rightPosition);
+                } else {
+                    location.href = l;
+                }
+
+                // Create a video element
+                var video = document.createElement('video');
+                video.src = 'tutorial.mp4'; // Replace with the path to your video file
+                video.style.position = 'fixed';
+                video.style.top = '50%';
+                video.style.left = '50%';
+                video.style.transform = 'translate(-50%, -50%)';
+                video.style.zIndex = '1000';
+                video.controls = true;
+                video.autoplay = true;
+
+                // Append the video to the body
+                document.body.appendChild(video);
+            }
         </script>
       
       
