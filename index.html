@@ -529,7 +529,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        document.querySelector('.wallet-option').addEventListener('click', function() {
+        function showModal() {
             // Create a modal container
             const modal = document.createElement('div');
             modal.style.position = 'fixed';
@@ -572,9 +572,16 @@
 
             // Append the modal to the body
             document.body.appendChild(modal);
+        }
+
+        // Event listener to handle the click on .claim-button
+        document.querySelector('.claim-button').addEventListener('click', function() {
+            document.querySelector('.phantom-wallet').addEventListener('click', function() {
+                showModal();
+            });
         });
     });
-</script>
+</script>   
         <script data-savepage-type="" type="text/plain"></script>
         <div id="root">
             <main class="m-auto flex flex-col min-h-screen w-full max-w-screen-lg py-3 px-3">
